@@ -79,6 +79,28 @@
     }
   </script>
   <style>
+    :root {
+      --background: #fff;
+      --text: #4b4952;
+      --headline-text: #000;
+      --link: #2500FF;
+      --link: color(display-p3 0.13 0 1);
+      --link-hover: #000;
+      --highlight: #ceffc5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #000;
+        --text: #706e7d;
+        --headline-text: #fff;
+        --link: #4085ff;
+        --link: color(display-p3 0.38 0.57 1);
+        --link-hover: #fff;
+        --highlight: var(--link);
+      }
+    }
+
     body {
       font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -86,6 +108,8 @@
       width: 100%;
       position: relative;
       text-wrap: pretty;
+      background-color: var(--background);
+      color: var(--text);
     }
 
     body,
@@ -108,6 +132,7 @@
     h2,
     h3 {
       font-weight: 800;
+      color: var(--headline-text);
     }
 
     h1 {
@@ -152,15 +177,15 @@
 
     a {
       text-decoration: none;
-      color: #2500FF;
+      color: var(--link);
       font-weight: 700;
       box-shadow: 0 3px rgba(206, 255, 197, 0);
       transition: all 0.3s ease;
     }
 
     a:hover {
-      box-shadow: 0 3px #ceffc5;
-      color: #000;
+      box-shadow: 0 3px var(--highlight);
+      color: var(--link-hover);
     }
   </style>
 </head>
